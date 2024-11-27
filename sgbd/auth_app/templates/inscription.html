@@ -1,0 +1,43 @@
+{% load static %}
+{% load django_browser_reload %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Inscription</title>
+</head>
+<body>
+    <div class="form-container">
+        <!-- Logo ajouté au-dessus du formulaire -->
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+
+        </div>
+        
+        <h2>Créer un compte EigsiBOOK</h2>
+        <form method="POST" action="{% url 'auth_app:inscription' %}">
+            {% csrf_token %}
+            <div align="center">
+            <input type="text" name="first_name" placeholder="Nom" required>
+            <input type="text" name="last_name" placeholder="Prénom" required>
+            <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <input type="password" name="confirm_password" placeholder="Confirmez votre mot de passe" required>
+            <input type="text" name="promo" placeholder="Promo">
+            </div>
+            
+            <div align="Center">
+            <button type="submit">Créer le compte </button>
+            </div>
+        </form>
+        
+        <div class="txt">
+        <p>Vous avez un compte ? <a href="{% url 'auth_app:connexion' %}">Se connecter</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

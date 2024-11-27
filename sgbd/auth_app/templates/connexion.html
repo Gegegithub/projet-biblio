@@ -1,0 +1,40 @@
+<!-- connexion.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Connexion</title>
+</head>
+<body>
+    <div class="form-container">
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+
+        </div>
+        <h2>Se connecter à son compte EigsiBOOK</h2>
+         <!-- Logo ajouté au-dessus du formulaire -->
+        
+        <form method="POST" action="{% url 'auth_app:connexion' %}">
+            {% csrf_token %}
+            <div align="center">
+            <input type="text" name="username_or_email" placeholder="Nom d'utilisateur ou Email" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            </div>
+            <div align="center">
+            <button type="submit">Se connecter</button>
+            </div>
+        </form>
+        
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %} 
+        <div class="pas">
+        <p>Pas encore de compte ? <a href="{% url 'auth_app:inscription' %}">S'inscrire ici</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

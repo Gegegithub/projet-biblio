@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Page d'accueil</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Bienvenue sur la plateforme !</h1>
+        <p>Bonjour, {{ user.first_name }} !</p> <!-- Affiche le prénom de l'utilisateur -->
+    </div>
+
+    <div class="content">
+        <p>C'est votre espace personnel. Vous pouvez accéder à vos informations, gérer votre compte, etc.</p>
+        
+        <p><a href="{% url 'auth_app:deconnexion' %}">Se déconnecter</a></p> <!-- Lien pour la déconnexion -->
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Votre site web. Tous droits réservés.</p>
+    </div>
+</body>
+</html>

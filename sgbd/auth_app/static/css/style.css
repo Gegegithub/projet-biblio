@@ -1,0 +1,103 @@
+style.css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #040f3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #0D255A;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="promo"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    /* width: 100%; */
+    padding: 10px;
+    background-color: #5EB727;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #e4e435;
+}
+
+a {
+    color: #41c321;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="promo"], button {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px; /* Ajoute un espace sous le logo */
+}
+
+.logo {
+    width: 100px; /* Ajuste la taille du logo */
+    height: auto;
+}
+
+.txt {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+ 
+.pas {
+
+    color: white;
+}
